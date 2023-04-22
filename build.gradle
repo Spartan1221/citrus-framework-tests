@@ -15,8 +15,10 @@ dependencies {
     implementation 'com.consol.citrus:citrus-http:3.2.1'
     implementation 'com.consol.citrus:citrus-jms:3.2.1'
     implementation 'com.consol.citrus:citrus-ws:3.2.1'
+    implementation 'com.consol.citrus:citrus-java-dsl:3.2.1'
     implementation 'org.slf4j:jcl-over-slf4j:2.0.1'
     implementation 'org.slf4j:slf4j-api:2.0.1'
+    implementation "org.junit.jupiter:junit-jupiter-params:5.8.1"
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.2'

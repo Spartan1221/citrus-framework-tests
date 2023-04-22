@@ -16,6 +16,7 @@
        http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
 
     <context:property-placeholder location="classpath:citrus.properties"/>
+    <context:component-scan base-package="org.example"/>
 
     <citrus:schema-repository id="schemaRepository"/>
 
