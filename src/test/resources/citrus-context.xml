@@ -7,13 +7,14 @@
        xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
        xmlns:citrus-test="http://www.citrusframework.org/schema/testcase"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
        http://www.citrusframework.org/schema/jms/config http://www.citrusframework.org/schema/jms/config/citrus-jms-config.xsd
        http://www.citrusframework.org/schema/ws/config http://www.citrusframework.org/schema/ws/config/citrus-ws-config.xsd
        http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd
-       http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+       http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:property-placeholder location="classpath:citrus.properties"/>
     <context:component-scan base-package="org.example"/>
@@ -25,10 +26,21 @@
         <citrus:file path="classpath:citrus.properties"/>
     </citrus:global-variables>
 
-    <citrus-http:client id="restClientRequest"
-                        request-url="${url}"
+    <citrus-http:client id="restStoreRequest"
+                        request-url="${urlRest}"
                         content-type="application/json"
                         timeout="15000"/>
+    <citrus-ws:client
+            id="soapHelperClient"
+            request-url="${urlSOAP}"
+            timeout="30000"/>
+
+
+    <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+        <property name="soapVersion">
+            <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_12"/>
+        </property>
+    </bean>
 
     <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
         <property name="serializationInclusion" value="NON_NULL"/>
