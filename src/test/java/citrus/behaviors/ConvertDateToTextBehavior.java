@@ -41,6 +41,7 @@ public class ConvertDateToTextBehavior implements TestBehavior {
                 .receive()
                 .message()
                 .validate()
+
                 .body(convResponse.convert(NumberToDollarsResponse.class, getNumberToDollarsResponse(getData), "http://www.dataaccess.com/webservicesserver/", "NumberToDollarsResponse")));
 
     }
