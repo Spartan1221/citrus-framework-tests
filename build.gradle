@@ -28,12 +28,12 @@ ext {
 }
 
 dependencies {
-    implementation 'com.consol.citrus:citrus-core:3.2.1'
-    implementation 'com.consol.citrus:citrus-junit:3.2.1'
-    implementation 'com.consol.citrus:citrus-http:3.2.1'
-    implementation 'com.consol.citrus:citrus-jms:3.2.1'
-    implementation 'com.consol.citrus:citrus-ws:3.2.1'
-    implementation 'com.consol.citrus:citrus-java-dsl:3.2.1'
+    implementation 'com.consol.citrus:citrus-core:2.8.0'
+    implementation 'com.consol.citrus:citrus-junit:3.0.0'
+    implementation 'com.consol.citrus:citrus-http:2.8.0'
+    implementation 'com.consol.citrus:citrus-jms:2.8.0'
+    implementation 'com.consol.citrus:citrus-ws:2.8.0'
+    implementation 'com.consol.citrus:citrus-java-dsl:2.8.0'
     implementation "org.junit.jupiter:junit-jupiter-params:5.8.1"
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'org.slf4j:jcl-over-slf4j:1.7.25'
