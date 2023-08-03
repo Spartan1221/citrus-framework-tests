@@ -68,6 +68,10 @@ tasks.withType (Test) {
     systemProperty 'file.encoding', propertySourceFileEncoding
 }
 
+configurations {
+    testCompile
+}
+
 test {
     useJUnitPlatform()
 }
